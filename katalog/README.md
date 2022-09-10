@@ -6,7 +6,7 @@ Link menuju aplikasi Heroku katalog-bella yang sudah dideploy -> https://katalog
 
 ## Bagan Request client
 
-
+![New Flowchart](https://user-images.githubusercontent.com/112465346/189484162-ab242e47-0897-48da-9ec2-9326f63e1f59.png)
 
 ## Virtual Environment
 
