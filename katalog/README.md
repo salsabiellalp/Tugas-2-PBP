@@ -2,11 +2,11 @@
 
 Folder ini berisi file-file dan konfigurasi penting dalam berjalannya aplikasi katalog-bella.
 
-Link menuju aplikasi Heroku yang sudah dideploy -> https://katalog-bella.herokuapp.com/katalog/
+Link menuju aplikasi Heroku katalog-bella yang sudah dideploy -> https://katalog-bella.herokuapp.com/katalog/
 
-## Request client??
+## Bagan Request client
 
-Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;
+
 
 ## Virtual Environment
 
@@ -16,7 +16,7 @@ Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan v
 
 Kita masih dapat bekerja tanpa virtual environment, yang perlu Anda lakukan yaitu menginstal perpustakaan secara global.Jika kita tidak mengaktifkan virtual environment pada proyek kita maka paket-paket atau modul akan diambil dari site-packages alias global environment. Namun, hal ini bisa menjadi masalah jika Anda memiliki banyak proyek pada mesin yang sama karena bisa conflict dengan sistem modules dan settings anda.
 
-## pengimplementasian 
+## Pengimplementasian 
 
 1. Pada tugas ini yang dilakukan adalah 
 Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
