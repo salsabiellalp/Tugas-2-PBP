@@ -14,12 +14,12 @@ Virtual Environment adalah tools untuk membuat lingkungan python virtual yang te
 
 Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
-Kita masih dapat bekerja tanpa virtual environment, yang perlu Anda lakukan yaitu menginstal perpustakaan secara global.Jika kita tidak mengaktifkan virtual environment pada proyek kita maka paket-paket atau modul akan diambil dari site-packages alias global environment. Namun, hal ini bisa menjadi masalah jika Anda memiliki banyak proyek pada mesin yang sama karena bisa conflict dengan sistem modules dan settings anda.
+Kita masih dapat bekerja tanpa virtual environment, yang perlu kita lakukan yaitu menginstal perpustakaan secara global. Jika kita tidak mengaktifkan virtual environment pada proyek kita maka paket-paket atau modul akan diambil dari site-packages alias global environment. Namun, hal ini bisa menjadi masalah jika kita memiliki banyak proyek pada mesin yang sama karena bisa conflict dengan sistem modules dan settings kita.
 
 ## Pengimplementasian 
 
-1. Pada tugas ini yang dilakukan adalah 
-Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
+Pada tugas ini yang dilakukan adalah:
+1. Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
 2. Membuat sebuah routing untuk memetakan fungsi yang telah kamu buat pada views.py.
 3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template.
 4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah kamu buat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
