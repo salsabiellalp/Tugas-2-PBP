@@ -22,4 +22,4 @@ Pada tugas ini yang dilakukan adalah:
 1. Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dengan cara mengimport CatalogItem dari models.py dan menggunakan syntax CatalogItem.objects.all() serta mengembalikan data ke dalam sebuah HTML dengan cara mengimport dan memanggil fungsi render().
 2. Membuat sebuah routing untuk memetakan fungsi yang telah dibuat pada views.py dengan membuat path yang sesuai pada urls.py untuk mengarahkan ke fungsi yang telah dibuat di views.py
 3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template dengan cara load data json dan menyimpannya ke dalam context lalu memanggil fungsi render untuk mengirimnya ke template html.
-4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat dengan cara membuat aplikasi baru di heroku, menghubungkannya ke repositori github yang terkait seperti yang dilakukan pada lab 0.
+4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat dengan cara membuat aplikasi baru di heroku dan menghubungkannya ke repositori github terkait seperti yang dilakukan pada lab 0.
