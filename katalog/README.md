@@ -19,10 +19,7 @@ Kita masih dapat bekerja tanpa virtual environment, yang perlu kita lakukan yait
 ## Pengimplementasian 
 
 Pada tugas ini yang dilakukan adalah:
-1. Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
-2. Membuat sebuah routing untuk memetakan fungsi yang telah kamu buat pada views.py.
-3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template.
-4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah kamu buat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
-
-Pengimplementasian:
-Cara saya mengimplementasikan 4 poin di atas adalah dengan mengimplementasikan apa yang sudah saya pelajari pada lab 0 dan lab 1. Untuk poin 1 sampai 3 saya sudah mempelajarinya pada saat lab 1 (tutorial 1) sehingga pengimplementasian pada tugas ini yaitu dengan melakukan langkah-langkah yang sama seperti lab 1 dan tentu saja dengan berbagai penyesuaian berhubung yang dibuat adalah aplikasi yang berbeda. Selanjutnya untuk poin 4 saya melakukan deployment dengan mengimplementasikan pengetahuan yang telah saya dapat dari lab 0 tentang deployment ke Heroku agar setelah di deploy link bisa di akses secara umum.
+1. Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dengan cara mengimport CatalogItem dari models.py dan menggunakan syntax CatalogItem.objects.all() serta mengembalikan data ke dalam sebuah HTML dengan cara mengimport dan memanggil fungsi render().
+2. Membuat sebuah routing untuk memetakan fungsi yang telah dibuat pada views.py dengan membuat path yang sesuai pada urls.py untuk mengarahkan ke fungsi yang telah dibuat di views.py
+3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template dengan cara load data json dan menyimpannya ke dalam context lalu memanggil fungsi render untuk mengirimnya ke template html.
+4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat dengan cara membuat aplikasi baru di heroku, menghubungkannya ke repositori github yang terkait seperti yang dilakukan pada lab 0.
