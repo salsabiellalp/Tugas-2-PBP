@@ -6,7 +6,8 @@ Link menuju aplikasi Heroku katalog-bella yang sudah dideploy -> https://katalog
 
 ## Bagan Request client
 
-![New Flowchart](https://user-images.githubusercontent.com/112465346/189484162-ab242e47-0897-48da-9ec2-9326f63e1f59.png)
+![Screenshot 2022-09-15 001702](https://user-images.githubusercontent.com/112465346/190220294-0bac5b82-7f5c-411f-8b9e-991071a78784.png)
+
 
 ## Virtual Environment
 
@@ -20,6 +21,19 @@ Kita masih dapat bekerja tanpa virtual environment, yang perlu kita lakukan yait
 
 Pada tugas ini yang dilakukan adalah:
 1. Membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari model dengan cara mengimport CatalogItem dari models.py dan menggunakan syntax CatalogItem.objects.all() serta mengembalikan data ke dalam sebuah HTML dengan cara mengimport dan memanggil fungsi render().
+
+![views py](https://user-images.githubusercontent.com/112465346/190221023-ff2eaaae-eed3-44dc-8cbe-8c2c058cc2de.png)
+
 2. Membuat sebuah routing untuk memetakan fungsi yang telah dibuat pada views.py dengan membuat path yang sesuai pada urls.py untuk mengarahkan ke fungsi yang telah dibuat di views.py
+
+![urls py](https://user-images.githubusercontent.com/112465346/190221371-3506a2f9-d10d-4085-a640-09bce9660034.png)
+
 3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template dengan cara load data json dan menyimpannya ke dalam context lalu memanggil fungsi render untuk mengirimnya ke template html.
-4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat dengan cara membuat aplikasi baru di heroku dan menghubungkannya ke repositori github terkait seperti yang dilakukan pada lab 0.
+
+![context](https://user-images.githubusercontent.com/112465346/190224367-633f50e0-69c5-42f5-b015-0d04c1da3e0c.png) 
+
+dan dipetakan ke file HTML seperti berikut:
+
+![html](https://user-images.githubusercontent.com/112465346/190224765-b21d1183-6c07-41e7-9756-1cb775c26505.png)
+
+4. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat dengan cara membuat aplikasi baru di heroku, mengatur API key dan menghubungkannya (connect) ke repositori github terkait dan melakukan re-run failed jobs di github actions seperti yang dilakukan pada lab 0.
