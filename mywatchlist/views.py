@@ -22,9 +22,24 @@ def show_json(request):
 
 def show_html(request):
     data_mywatchlist = MyWatchList.objects.all()
+    count_true = 0
+    count_false = 0
+    display_message = ""
+    for i in data_mywatchlist:
+        if i.watched == True:
+            count_true += 1
+        else:
+            count_false += 1
+
+    if count_true >= count_false:
+        display_message = "Selamat, kamu sudah banyak menonton!" 
+    else:
+        display_message = "Wah, kamu masih sedikit menonton!"
+
     context = {
         'list_movie' : data_mywatchlist,
-        'nama' : 'Bella'
+        'nama' : 'Bella',
+        'display_message' : display_message
     }
     return render(request, 'mywatchlist.html', context)
 
