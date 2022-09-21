@@ -1,0 +1,113 @@
+[
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":1,
+        "fields":{
+            "watched":true,
+            "title":"Shawshank Redemption",
+            "rating": 4,
+            "release_date": "2016-01-07",
+            "review": "Film ini penuh aura “mengerikan,” yang datang dari konsekuensi kehidupan ironis dari sistem penjara yang korup, dan tanpa moral."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":2,
+        "fields":{
+            "watched": false,
+            "title":"2037",
+            "rating": 4,
+            "release_date": "2022-06-08",
+            "review": "menceritakan kehidupan dalam sel penjara, yang membedakan dengan film-film terdahulunya, “2037” membawa karakter gadis berusia 19 tahun yang harus terjebak menjadi terdakwa sekaligus terpidana dari kasus pembunuhan seorang tersangka pemerkosaan yang melibatkan dirinya sendiri sebagai korban."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":3,
+        "fields":{
+            "watched":false,
+            "title":"Mencuri Raden Saleh",
+            "rating": 4,
+            "release_date": "2022-08-25",
+            "review": "Film Mencuri Raden Saleh memberikan momen tiap pemain dengan sangat epic. Sepanjang film ini, banyak sekali kejutan atau plot twist yang tak terduga sama sekali oleh para penonton."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":4,
+        "fields":{
+            "watched":false,
+            "title":"Bumi Manusia",
+            "rating": 4,
+            "release_date": "2019-08-15",
+            "review": "Bumi Manusia merupakan film sejarah yang dibungkus ciamik agar bisa diterima generasi muda Indonesia. Bagi kamu penggemar novel, pasti udah nggak asing lagi dengan novel Bumi Manusia karya Pramoedya Ananta Toer."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":5,
+        "fields":{
+            "watched":true,
+            "title":"500 Days of Summer",
+            "rating": 4,
+            "release_date": "2009-07-17",
+            "review": "Kisah romantis dalam kehidupan sehari-hari ditampilkan cukup unik dan berbeda sehingga menimbulkan kesan yang mendalam di hati penonton."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":6,
+        "fields":{
+            "watched":true,
+            "title":"Greenbook",
+            "rating": 4,
+            "release_date": "2018-11-16",
+            "review": "Green Book merupakan film yang diangkat dari kisah nyata seorang musisi jazz di era 60-an, Don Shirley, dimana kala itu Shirley mendapatkan perlakuan rasis karena ia berasal dari ras kulit hitam."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":7,
+        "fields":{
+            "watched":true,
+            "title":"Gifted",
+            "rating": 4,
+            "release_date": "2017-04-12",
+            "review": "Dari sekian film drama, yang berfokus pada hubungan keluarga antara pria dewasa, dan gadis kecil, Gifted adalah salah satu yang berkesan, dan menjanjikan."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":8,
+        "fields":{
+            "watched":false,
+            "title":"Before Sunrise",
+            "rating": 4,
+            "release_date": "1995-05-24",
+            "review": "Before Sunrise adalah film yang mengisahkan tentang seorang pria bernama Jesse (Ethan Hawke) yang bertemu dengan seorang wanita bernama Celine (Julie Delpy) di sebuah kereta api."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":9,
+        "fields":{
+            "watched":false,
+            "title":"Howl's Moving Castle",
+            "rating": 4,
+            "release_date": "2004-07-16",
+            "review": "Film ini mengisahkan tentang seorang gadis bernama Sophie yang berusia 16 tahun. Sophie adalah seorang gadis yang sangat cantik dan pintar."
+        }
+    },
+    {
+        "model":"mywatchlist.MyWatchList",
+        "pk":10,
+        "fields":{
+            "watched":false,
+            "title":"kiki's Delivery Service",
+            "rating": 4,
+            "release_date": "1989-07-29",
+            "review": "Film ini mengisahkan tentang seorang gadis bernama Kiki yang berusia 13 tahun. Kiki adalah seorang gadis yang sangat pintar dan ceria."
+        }
+    }
+    
+]
