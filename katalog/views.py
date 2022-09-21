@@ -9,3 +9,4 @@ def show_katalog(request):
         'nama': 'Bella'
     }
     return render(request, "katalog.html", context)
+
