@@ -1,6 +1,13 @@
-## Perbedaan antara JSON, XML, dan HTML
-lalala
+- Link HTML -> https://katalog-bella.herokuapp.com/mywatchlist/html
 
+- Link JSON -> https://katalog-bella.herokuapp.com/mywatchlist/json
+
+- link XML -> https://katalog-bella.herokuapp.com/mywatchlist/xml
+
+## Perbedaan antara JSON, XML, dan HTML
+| HTML | JSON | XML |
+| ------------- | ------------- | --------- |
+| HTML (Hypertext Markup Language) adalah bahasa markup yang digunakan untuk membuat halaman website. HTML memerlukan pembuka maupun penutup tag dan mendukung banyak jenis encoding | JSON digunakan untuk menyimpan informasi dengan cara yang terorganisir dan mudah diakses. JSON berbasis markup laguage dan digunakan untuk data delivery atau transfer data. JSON tidak memerlukan pembuka maupun penutup tag dan JSON mendukung semua browser dan sebagian besar teknologi backend mendukung JSON, tetapi ukungan tool pengembangan terbatas DAN Hanya mendukung encoding UTF-8.| XML adalah bahasa markup yang dirancang untuk menyimpan data. Ini populer digunakan atau transfer data. XML Berbasis notasi objek dalam JavaScript dan juga digunakan untuk data delivery atau transfer data. XML memerlukan pembuka maupun penutup tag Dengan bantuan XML, pertukaran data dilakukan dengan cepat antara platform yang berbeda. Jadi, ini membuat dokumen dapat dipindahkan ke seluruh sistem dan aplikasi. Sintaks XML terkadang bisa membingungkan karena mirip dengan alternatif lain dan terkadang berlebihan. |
 
 ## Mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 
