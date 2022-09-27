@@ -18,7 +18,8 @@
  Tanpa CSRF token, request pengguna tidak memiliki kode token yang kompleks sehingga peretas dapat mengeksploitasi celah ini untuk melakukan aktivitas yang tidak diinginkan seperti mengubah data seperti profil pribadi, alamat email, bahkan yang lebih berbahaya melakukan transaksi transfer dana.
  
 ## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})?
-
+Kita tetap bisa membuat elemen <form> secara manual tanpa menggunakan generator karena sebenarnya syntax dari html sendiri sudah bisa mendasari pembuatan elemen form. Tetapi django menyediakan template atau generator yang membuat kita mengimplementasikan pembuatan form dengan lebih sederhana dan mudah.
+ - gambaran pembuatan <form> secara manual.
   
 ## Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 
