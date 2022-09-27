@@ -11,6 +11,8 @@
 
 
 ## Apa kegunaan {% csrf_token %} pada elemen <form>?
+ CSRF (Cross-Site Request Forgery) adalah jenis serangan keamanan web untuk mendapatkan atau mengirim request kepada suatu aplikasi website (misal: submit suatu form) secara illegal yaitu tidak melalui form yang ada di website tersebut secara langsung, sehingga aplikasi tersebut mengeksekusi suatu tindakan yang sebenarnya tidak dikehendaki oleh pengguna internet. Serangan CSRF dapat terjadi disebabkan karena tidak ada mekanisme perlindungan token keamanan (request token) pada sebuah website, sehingga penyerang dapat mengirim suatu request. Untuk itu penting sekali untuk menerapkan mekanisme perlindungan CSRF (CSRF Protection). Potongan kode di atas adalah salah satu mekanisme perlindungan csrf 
+ - Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
  
   
 ## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})?
