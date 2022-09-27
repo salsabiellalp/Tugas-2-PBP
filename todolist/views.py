@@ -11,11 +11,8 @@ import itertools
 
 
 # Create your views here.
-
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    # id = request.user.id
-    # user = request.user
     context = {
         'username': request.user.username,
         'task_list': Task.objects.filter(user=request.user),
@@ -30,11 +27,9 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Akun telah berhasil dibuat!')
-            return redirect('todolist:login_user')
-    
+            return redirect('todolist:login_user')  
     context = {'form':form}
     return render(request, 'register.html', context)
-
 
 def login_user(request):
     if request.method == 'POST':
