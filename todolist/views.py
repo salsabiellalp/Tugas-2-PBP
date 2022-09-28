@@ -19,7 +19,6 @@ def show_todolist(request):
     }
     return render(request, "todolist.html", context)
 
-
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
@@ -44,10 +43,9 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
-
 def logout_user(request):
     logout(request)
-    return redirect('todolist:login_user')
+    return redirect("todolist:login_user")
 
 @login_required(login_url="/todolist/login")
 def create_task(request):
