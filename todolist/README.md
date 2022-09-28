@@ -10,14 +10,14 @@
 - Link menuju logout page -> https://katalog-bella.herokuapp.com/todolist/logout
 
 
-## Apa kegunaan {% csrf_token %} pada elemen <form>?
+## Apa kegunaan ```{% csrf_token %}``` pada elemen ```<form>```?
  CSRF (Cross-Site Request Forgery) adalah jenis serangan keamanan web untuk mendapatkan atau mengirim request kepada suatu aplikasi website (misal: submit suatu form) secara illegal yaitu tidak melalui form yang ada di website tersebut secara langsung, sehingga aplikasi tersebut mengeksekusi suatu tindakan yang sebenarnya tidak dikehendaki oleh pengguna internet. Serangan CSRF dapat terjadi disebabkan karena tidak ada mekanisme perlindungan token keamanan (request token) pada sebuah website, sehingga penyerang dapat mengirim suatu request. Untuk itu penting sekali untuk menerapkan mekanisme perlindungan CSRF (CSRF Protection). Potongan kode di atas adalah salah satu mekanisme perlindungan csrf. 
  
  Token tersebut diterapkan untuk menghindari serangan berbahaya. CSRF token menghasilkan token di sisi server saat merender halaman dan memeriksa ulang token yang didapat untuk setiap permintaan yang masuk kembali. Jika permintaan yang masuk tidak berisi token, permintaan tersebut tidak akan dieksekusi. Dengan tambahan sederhana ini, serangan CSRF dapat dihindari, sehingga menjamin keamanan request dari pengguna ke server.
  - Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
  Tanpa CSRF token, request pengguna tidak memiliki kode token yang kompleks sehingga peretas dapat mengeksploitasi celah ini untuk melakukan aktivitas yang tidak diinginkan seperti mengubah data seperti profil pribadi, alamat email, bahkan yang lebih berbahaya melakukan transaksi transfer dana.
  
-## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})?
+## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti ```{{ form.as_table }})```?
 Kita tetap bisa membuat elemen <form> secara manual tanpa menggunakan generator karena sebenarnya syntax dari html sendiri sudah bisa mendasari pembuatan elemen form. Tetapi django menyediakan template atau generator yang membuat kita mengimplementasikan pembuatan form dengan lebih sederhana dan mudah.
  - gambaran pembuatan <form> secara manual.
   
