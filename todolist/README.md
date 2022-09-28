@@ -11,17 +11,40 @@
 
 
 ## Apa kegunaan ```{% csrf_token %}``` pada elemen ```<form>```?
- CSRF (Cross-Site Request Forgery) adalah jenis serangan keamanan web untuk mendapatkan atau mengirim request kepada suatu aplikasi website (misal: submit suatu form) secara illegal yaitu tidak melalui form yang ada di website tersebut secara langsung, sehingga aplikasi tersebut mengeksekusi suatu tindakan yang sebenarnya tidak dikehendaki oleh pengguna internet. Serangan CSRF dapat terjadi disebabkan karena tidak ada mekanisme perlindungan token keamanan (request token) pada sebuah website, sehingga penyerang dapat mengirim suatu request. Untuk itu penting sekali untuk menerapkan mekanisme perlindungan CSRF (CSRF Protection). Potongan kode di atas adalah salah satu mekanisme perlindungan csrf. 
- 
- Token tersebut diterapkan untuk menghindari serangan berbahaya. CSRF token menghasilkan token di sisi server saat merender halaman dan memeriksa ulang token yang didapat untuk setiap permintaan yang masuk kembali. Jika permintaan yang masuk tidak berisi token, permintaan tersebut tidak akan dieksekusi. Dengan tambahan sederhana ini, serangan CSRF dapat dihindari, sehingga menjamin keamanan request dari pengguna ke server.
+  - CSRF (Cross-Site Request Forgery) adalah jenis serangan keamanan web untuk mendapatkan atau mengirim request kepada suatu aplikasi website (misal: submit suatu form) secara illegal yaitu tidak melalui form yang ada di website tersebut secara langsung, sehingga aplikasi tersebut mengeksekusi suatu tindakan yang sebenarnya tidak dikehendaki oleh pengguna internet. Serangan CSRF dapat terjadi disebabkan karena tidak ada mekanisme perlindungan token keamanan (request token) pada sebuah website, sehingga penyerang dapat mengirim suatu request. Untuk itu penting sekali untuk menerapkan mekanisme perlindungan CSRF (CSRF Protection). Potongan kode di atas adalah salah satu mekanisme perlindungan csrf. 
+  - Token tersebut diterapkan untuk menghindari serangan berbahaya. CSRF token menghasilkan token di sisi server saat merender halaman dan memeriksa ulang token yang didapat untuk setiap permintaan yang masuk kembali. Jika permintaan yang masuk tidak berisi token, permintaan tersebut tidak akan dieksekusi. Dengan tambahan sederhana ini, serangan CSRF dapat dihindari, sehingga menjamin keamanan request dari pengguna ke server.
  - Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
  Tanpa CSRF token, request pengguna tidak memiliki kode token yang kompleks sehingga peretas dapat mengeksploitasi celah ini untuk melakukan aktivitas yang tidak diinginkan seperti mengubah data seperti profil pribadi, alamat email, bahkan yang lebih berbahaya melakukan transaksi transfer dana.
  
 ## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti ```{{ form.as_table }})```?
-Kita tetap bisa membuat elemen <form> secara manual tanpa menggunakan generator karena sebenarnya syntax dari html sendiri sudah bisa mendasari pembuatan elemen form. Tetapi django menyediakan template atau generator yang membuat kita mengimplementasikan pembuatan form dengan lebih sederhana dan mudah.
- - gambaran pembuatan <form> secara manual.
-  
+   Kita tetap bisa membuat elemen <form> secara manual tanpa menggunakan generator karena sebenarnya syntax dari html sendiri sudah bisa mendasari pembuatan elemen form. Tetapi django menyediakan template atau generator yang membuat kita mengimplementasikan pembuatan form dengan lebih sederhana dan mudah.
+ Gambaran pembuatan <form> secara manualnya adalah sebagai berikut:
+   - pembuatan form pada html harus diawali dan diakhiri tag form seperti berikut  
+   ```
+   <form action="<http-request>" method="post">
+   ...isi form...
+   </form>
+   ```
+   - form tersebut dapat diisi tipe data input yang sesuai dengan menambahkan tag input, misalnya ```<input type="text" id="title>``` dan membuat button bertipe submit dengan misalnya ```<button type="submit">Submit</button>``` sehingga saat user menekan button tersebut, value yang di masukan input akan dikirimkan sesuai action dan method yang ditentukan.
+
+    
+    
 ## Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+- User memasukkan input dihalaman form html, yang pada aplikasi todolist form juga terdapat pada halaman login
+  User memasukkan input username dan password, kemudia fungsi yang ada di ```views.py``` akan mengambil data tersebut dangan menggunakan perintah dibawah ini dan kemudian fungsi tersebut akan meredirect ke html yang diinginkan.
+    ``` 
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+    ```
+  
+    
+- contoh lain, misalnya pada saat melakukan create task, user memasukan input judul dan deskripsi, lalu fungsi ```create_task``` yang ada di ```views.py``` akan mengambil value data dari form dengan menggunakan perintah berikut
+    ```
+    judul = request.POST.get("judul")
+    deskripsi = request.POST.get("deskripsi")
+    ```
+    Kemudian di redirect menuju fungsi utama yaitu ```show_todolist``` yang menampilkan todolist.html, kemudian ```show_todolist``` akan lanjut memanggil fungsi render untuk merender semua objek dalam context dan memasukkannya kedalam todolist.html
+    
 
 
 ## Implementasi
