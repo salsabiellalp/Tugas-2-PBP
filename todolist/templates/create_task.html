@@ -1,23 +1,76 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 1px 1px;
+      cursor: pointer;
+    }
+    
+    .button :hover {
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .button4 {
+        border-radius: 12px;
+        width: 100px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .button4 :hover {
+        text-decoration: none;
+        font-size: 17px;
+    } 
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+    }
+    .regis {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+
 <div class = "login">
-    <h3>Add your new task!</h3>
-    <form method="POST" action="">
-        {% csrf_token %}
-        <div>
-            <label for="judul">Task: </label>
-            <input id="judul" type="text" name="title" placeholder="write your task" required>
-        </div>
-
-        <p></p>
-        <div>
-            <label for="deskripsi">Description: </label>
-            <input id="deskripsi" type="text" name="description" placeholder="describe your task" required>
-        </div>
-
-        <p></p>
-        <input type="submit" value="Tambah Task Baru">
-    </form>
+    <div class="card m-3" style="width: 20rem; background-color: #2b2b2b; border-radius: 18px; height: fit-content;">
+        <center><h3 class="m-3">Add your new task!</h3><center>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="card-body">
+            <div class="m-2" style="display:flex; flex-direction: column; text-align: left;">
+                <label for="judul">Task: </label>
+                <input id="judul" type="text" name="title" placeholder="write your task" required>
+            </div>
+            <div class="m-2" style="display:flex; flex-direction: column; text-align: left;">
+                <label for="deskripsi">Description: </label>
+                <input id="deskripsi" type="text" name="description" placeholder="describe your task" required>
+            </div>
+            </div>
+    
+            <center><input class="button button4" type="submit" value="Tambah Task Baru" style="background-color: #1c54cc;"></center>
+        </form>
+    </div>
+    
+    
 </div>
 {% endblock content %}

@@ -5,20 +5,68 @@
 {% endblock meta %}
 
 {% block content %}  
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 1px 1px;
+      cursor: pointer;
+    }
+    
+    .button :hover {
+      text-decoration: none;
+      font-size: 17px;
+    }
+    .button4 {
+        border-radius: 12px;
+        width: 100px;
+        text-align: center;
+        margin-bottom: 20px;
+        
+    }
+    .button4 :hover {
+        text-decoration: none;
+        font-size: 17px;
+    } 
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+    }
+    .regis {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+</head>
 <div class = "login">
     
     <h1>Formulir Registrasi</h1>  
 
         <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
-                </tr>  
-            </table>  
+            {% csrf_token %}
+            <div class="card m-3" style="width: 50rem; background-color: #2b2b2b; border-radius: 18px;  height: fit-content;">
+                <div class="card-body"> 
+                <center><h5 class="card-title text-white">Formulir Registrasi</h5></center>           
+                <table class="regis">  
+                    {{ form.as_table }} 
+                </table> 
+                    <center><input class ="button button4" type="submit" name="submit" value="Daftar" style="background-color: #1c54cc;"/><center>
+                </div> 
+            </div>   
+             
         </form>
 
     {% if messages %}  
