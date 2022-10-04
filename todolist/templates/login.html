@@ -5,29 +5,80 @@
 {% endblock meta %}
 
 {% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 7px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 1px 1px;
+      cursor: pointer;
+    }
+    
+    .delete-button {
+       background-color: #b3270f;
+    }
+    .button :hover {
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
 
-<div class = "login">
+    .button4 {
+        border-radius: 12px;
+        width: 100px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .button4 :hover {
+        text-decoration: none;
+        font-size: 17px;
+    } 
+    .login-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+    }
+    .regis {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+    }
+    </style>
+</head>
 
-    <h1>Login</h1>
-
+<div class = "login-page" >
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
+        <div class="card m-3" style="width: 18rem; background-color: #2b2b2b; border-radius: 18px; max-width: 30rem; height: fit-content;">
+            <div class="card-body">
+              <center><h5 class="card-title text-white">LOGIN</h5></center>
+              <tr>
+                <td >Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
-                    
             <tr>
                 <td>Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+            </div>
+            <td>
+                <center><input class="button button4" type="submit" value="Login" style="background-color: #1c54cc;"></center>
+            </td> 
+            
+        </div> 
+         
     </form>
 
     {% if messages %}
@@ -37,9 +88,11 @@
             {% endfor %}
         </ul>
     {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-
+    <div class="regis">   
+    Belum mempunyai akun? 
+        <button type="button" class="button button4 m-3" style="background-color: #1c54cc;"><a href="{% url 'todolist:register' %}" class="text-white">Buat akun</a></button>
+    </div> 
+    
 </div>
 
 {% endblock content %}
