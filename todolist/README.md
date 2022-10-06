@@ -100,11 +100,11 @@ Berguna untuk memperbarui kode dengan cepat. Proses request HTTP yang kecil memb
 | Tidak efisien karena Inline style CSS hanya bisa diterapkan pada satu elemen HTML.| Tidak efisien jika unutk menggunakan CSS yang sama dalam banyak file. Performa web jadi lambat, karena CSS yang berbeda-beda dapat mengakibatkan loading ulang setiap berganti halaman website. | Ketika file CSS gagal dipanggil oleh file HTML, tampilan website akan terlihat berantakan. Salah satu sebabnya adalah koneksi internet yang lambat.|
 
 ##  Tag HTML5
-- <nav> -> membuat navigasi bar pada website
-- <footer> -> membuat footer section pada website
-- <header> -> membuat header section pada website
-- <main> -> membuat main content pada website
-- <input> -> membuat sebuah kontrol input
+- ```<nav>``` -> membuat navigasi bar pada website
+- ```<footer>``` -> membuat footer section pada website
+- ```<header>``` -> membuat header section pada website
+- ```<main>``` -> membuat main content pada website
+- ```<input>``` -> membuat sebuah kontrol input
 
 ## CSS selector
 1. Selektor class : Selektor class adalah selektor yang memilih elemen berdasarkan nama class yang diberikan. Selektor class dibuat dengan tanda titik di depannya.
