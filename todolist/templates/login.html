@@ -33,14 +33,14 @@
     .button4 :hover {
         text-decoration: none;
         font-size: 17px;
-    } 
-    .login-page {
+    }
+    .login{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        color: white;
+        color: gray;
     }
     .regis {
         display: flex;
@@ -48,12 +48,13 @@
         justify-content: center;
         align-items: center;
         color: black;
+       
         font-weight: bold;
     }
     </style>
 </head>
 
-<div class = "login-page" >
+<div class = "login" >
     <form method="POST" action="">
         {% csrf_token %}
         <div class="card m-3" style="width: 18rem; background-color: #2b2b2b; border-radius: 18px; max-width: 30rem; height: fit-content;">
@@ -69,7 +70,7 @@
             </tr>
             </div>
             <td>
-                <center><input class="button button4" type="submit" value="Login" style="background-color: #1c54cc;"></center>
+                <center><input class="btn login_btn button button4" type="submit" value="Login" style="background-color: #1c54cc;"></center>
             </td> 
             
         </div> 

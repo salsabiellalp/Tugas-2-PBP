@@ -16,7 +16,7 @@
           font-size: 16px;
           margin: 1px 1px;
           cursor: pointer;
-
+          border-radius: 12px;
           
         }
         
@@ -27,10 +27,11 @@
           text-decoration: none;
           font-size: 17px;
         }
-        
-    
-        .button4 {border-radius: 12px;}
-        
+        .card :hover{
+            background: rgb(53, 53, 53);
+            border-radius: 16px;
+            
+        }
         </style>
     </head>
 
@@ -48,20 +49,20 @@
     <div class="m-5">
         {% for task in task_list %}
         
-        <div class="card w-50 m-3" style="background-color: #2b2b2b; border-radius: 16px; max-width: 30rem; height: fit-content;">
+        <div class="card w-50 m-3" style="background-color: #2b2b2b; border-radius: 16px; height: fit-content;">
             <div class="card-body">
                 <h5 class="card-title text-white">{{task.title}}</h5>
-                <p class="card-text text-white" style="font-size: 17px" >{{task.description}}</p>
-                <p class="card-text text-white" style="font-size: 12px">{{task.date}}</p>
+                <p class="text-white" style="font-size: 17px" >{{task.description}}</p>
+                <p class="text-white" style="font-size: 12px">{{task.date}}</p>
                 
                 {% if task.is_finished == True %}
-                <p class="card-text" style="color: #7e5cdd; font-weight: bold;">Selesai</p>
+                <p style="color: #7e5cdd; font-weight: bold;">Selesai</p>
                 {% else %}
-                <p class="card-text" style="color: #dd352f; font-weight: bold;" >Belum Selesai</p>
+                <p style="color: #dd352f; font-weight: bold;" >Belum Selesai</p>
                 {%endif%}
-
-                <button type="button" class="button button4" style="background-color: #543479;" ><a href="{% url 'todolist:change-status' task.id %}"class="text-white">Update Task</a></button>
-                <button type="button" class="button button4 delete-button" ><a href="{% url 'todolist:delete-task' task.id %}" class="text-white">Delete Task</a></button>
+            
+                <button type="button" class="button " style="background-color: #543479;" ><a href="{% url 'todolist:change-status' task.id %}"class="text-white">Update Task</a></button>
+                <button type="button" class="button delete-button" ><a href="{% url 'todolist:delete-task' task.id %}" class="text-white">Delete Task</a></button>
             </div>
         </div>            
     
