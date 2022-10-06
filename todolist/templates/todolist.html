@@ -23,12 +23,15 @@
         .delete-button {
            background-color: #b3270f;
         }
+        .update-button {
+           background-color: #543479;
+        }
         .button :hover {
           text-decoration: none;
           font-size: 17px;
         }
         .card :hover{
-            background: rgb(53, 53, 53);
+            background: rgb(61, 61, 61);
             border-radius: 16px;
             
         }
@@ -61,7 +64,7 @@
                 <p style="color: #dd352f; font-weight: bold;" >Belum Selesai</p>
                 {%endif%}
             
-                <button type="button" class="button " style="background-color: #543479;" ><a href="{% url 'todolist:change-status' task.id %}"class="text-white">Update Task</a></button>
+                <button type="button" class="button update-button" ><a href="{% url 'todolist:change-status' task.id %}"class="text-white">Update Task</a></button>
                 <button type="button" class="button delete-button" ><a href="{% url 'todolist:delete-task' task.id %}" class="text-white">Delete Task</a></button>
             </div>
         </div>            
