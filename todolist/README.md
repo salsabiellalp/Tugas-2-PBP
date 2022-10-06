@@ -94,10 +94,10 @@ Berhubung saya menggunakan aplikasi dan repositori github yang sama seperti tuga
 ## Perbedaan Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
 | Inline CSS | Internal CSS | External CSS |
 | ------------- | ------------- | --------- |
-| Inline CSS adalah adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. | Internal CSS adalah kode CSS yang ditulis dalam tag<style> dan kode HTML yang ditulis di bagian header file HTML. | External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian <head> di halaman. |
-| Inline CSS adalah | Internal CSS adalah| External CSS adalah |
-
-
+| Inline CSS adalah adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. | Internal CSS adalah kode CSS yang ditulis dalam tag<style> dan kode HTML yang ditulis di bagian header file HTML. Internal CSS digunakan untuk membuat tampilan pada satu halaman website dan tidak digunakan di halaman website yang lain. | External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian <head> di halaman. |
+| Cukup membantu ketika hanya ingin menguji dan melihat perubahan pada satu elemen.  | Perubahan Internal CSS hanya berlaku di satu halaman saja.| Ukuran halaman jadi lebih kecil dan struktur HTML menjadi lebih rapi, loading website lebih cepat.  |
+Berguna untuk memperbarui kode dengan cepat. Proses request HTTP yang kecil membuat proses loading website jadi lebih cepat.| Tidak perlu mengupload banyak file karena HTML dan CSS berada di satu file yang sama.| File CSS dapat digunakan pada beberapa halaman website sekaligus.  |
+| Tidak efisien karena Inline style CSS hanya bisa diterapkan pada satu elemen HTML.| Tidak efisien jika unutk menggunakan CSS yang sama dalam banyak file. Performa web jadi lambat, karena CSS yang berbeda-beda dapat mengakibatkan loading ulang setiap berganti halaman website. | Ketika file CSS gagal dipanggil oleh file HTML, tampilan website akan terlihat berantakan. Salah satu sebabnya adalah koneksi internet yang lambat.|
 
 ##  tag HTML5
 
