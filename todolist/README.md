@@ -92,6 +92,11 @@ Berhubung saya menggunakan aplikasi dan repositori github yang sama seperti tuga
 
 ## Tugas 5 PBP
 ## Perbedaan Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+| Inline CSS | Internal CSS | External CSS |
+| ------------- | ------------- | --------- |
+| Inline CSS adalah adalah kode CSS yang ditulis langsung pada atribut elemen HTML. Setiap elemen HMTL mempunyai atribut style. Di situlah inline CSS ditulis. | Internal CSS adalah kode CSS yang ditulis dalam tag<style> dan kode HTML yang ditulis di bagian header file HTML. | External CSS adalah kode CSS yang ditulis terpisah dari kode HTML. External CSS ditulis di sebuah file khusus menggunakan ekstensi .css. File external CSS umumnya diletakkan setelah bagian <head> di halaman. |
+| Inline CSS adalah | Internal CSS adalah| External CSS adalah |
+
 
 
 ##  tag HTML5
