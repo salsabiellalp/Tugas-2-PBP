@@ -90,6 +90,16 @@ Berhubung saya menggunakan aplikasi dan repositori github yang sama seperti tuga
   ![image](https://user-images.githubusercontent.com/112465346/192508320-aae23fe2-c70f-4454-a98c-1a61c7196b01.png)
 
 
+## Tugas 5 PBP
+## Perbedaan Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+
+
+##  tag HTML5
+
+## CSS selector
+
+## Implementasi checklist tugas 5
+
   
   
   
