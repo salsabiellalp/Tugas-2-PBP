@@ -99,11 +99,23 @@ Berhubung saya menggunakan aplikasi dan repositori github yang sama seperti tuga
 Berguna untuk memperbarui kode dengan cepat. Proses request HTTP yang kecil membuat proses loading website jadi lebih cepat.| Tidak perlu mengupload banyak file karena HTML dan CSS berada di satu file yang sama.| File CSS dapat digunakan pada beberapa halaman website sekaligus.  |
 | Tidak efisien karena Inline style CSS hanya bisa diterapkan pada satu elemen HTML.| Tidak efisien jika unutk menggunakan CSS yang sama dalam banyak file. Performa web jadi lambat, karena CSS yang berbeda-beda dapat mengakibatkan loading ulang setiap berganti halaman website. | Ketika file CSS gagal dipanggil oleh file HTML, tampilan website akan terlihat berantakan. Salah satu sebabnya adalah koneksi internet yang lambat.|
 
-##  tag HTML5
+##  Tag HTML5
+- <nav> -> membuat navigasi bar pada website
+- <footer> -> membuat footer section pada website
+- <header> -> membuat header section pada website
+- <main> -> membuat main content pada website
+- <input> -> membuat sebuah kontrol input
 
 ## CSS selector
+1. Selektor class : Selektor class adalah selektor yang memilih elemen berdasarkan nama class yang diberikan. Selektor class dibuat dengan tanda titik di depannya.
+2. Selektor ID : Selektor ID hampir sama dengan class. Bedanya, ID bersifat unik. Hanya boleh digunakan oleh satu elemen saja. Selektor ID ditandai dengan tanda pagar (#) di depannya.
+3. Selector Tag : Selektor Tag disbut juga Type Selector. Selektor ini akan memilih elemen berdasarkan nama tag.
 
 ## Implementasi checklist tugas 5
+- Menambahkan tag <link> dan <script> pada base.html untuk menggunakan bootstrap
+     ![image](https://user-images.githubusercontent.com/112465346/194207127-80833d16-d65a-4483-a389-7955bc3510c5.png)
+- Kustomisasi templates untuk halaman login, register, dan create-task memanfaatkan tag dan syntax bootstrap dan diimplementasikan di login.html, register.html, create_task.html, todolist.html
+- Pada tugas kali ini saya menggunakan boottrap sehingga halaman website nya sudah menjadi auto responsive
 
   
   
