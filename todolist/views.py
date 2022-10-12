@@ -75,3 +75,12 @@ def change_status(request, id):
 def show_json(request):
     data = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+def add_task_ajax(request):
+    if request.method == "POST":
+        judul = request.POST.get("task")
+        deskripsi = request.POST.get("deskripsi")
+        print(deskripsi)
+        add_todolist = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
+        add_todolist.save()
+    return HttpResponse('')
