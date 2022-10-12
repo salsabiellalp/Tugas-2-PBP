@@ -112,7 +112,7 @@ Berguna untuk memperbarui kode dengan cepat. Proses request HTTP yang kecil memb
 3. Selector Tag : Selektor Tag disbut juga Type Selector. Selektor ini akan memilih elemen berdasarkan nama tag.
 
 ## Implementasi checklist tugas 5
-- Menambahkan tag <link> dan <script> pada base.html untuk menggunakan bootstrap
+- Menambahkan tag ```<link>``` dan ```<script>``` pada base.html untuk menggunakan bootstrap
      ![image](https://user-images.githubusercontent.com/112465346/194207127-80833d16-d65a-4483-a389-7955bc3510c5.png)
 - Kustomisasi templates untuk halaman login, register, dan create-task memanfaatkan tag dan syntax bootstrap dan diimplementasikan di login.html, register.html, create_task.html, todolist.html
 - Pada tugas kali ini saya menggunakan boottrap sehingga halaman website nya sudah menjadi auto responsive
