@@ -1,3 +1,6 @@
+from django.http import HttpResponse
+from todolist.models import Task
+from django.core import serializers
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -67,3 +70,8 @@ def change_status(request, id):
     task.is_finished = not task.is_finished
     task.save()
     return redirect("todolist:show_todolist")
+
+@login_required(login_url="/todolist/login")
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")

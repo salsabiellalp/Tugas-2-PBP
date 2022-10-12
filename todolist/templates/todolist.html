@@ -2,7 +2,9 @@
 
 {% extends 'base.html' %}
 
-    {% block content %}
+
+
+{% block content %}
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
@@ -49,8 +51,8 @@
 
     <p class="text-center fs-6 m-5" style="font-weight: bold; font-size: larger;" >Hi {{username}}, have a nice day!</p>
     
-    <div class="m-5">
-        {% for task in task_list %}
+    <div class="content m-5">
+        <!-- {% for task in task_list %}
         
         <div class="card w-50 m-3" style="background-color: #2b2b2b; border-radius: 16px; height: fit-content;">
             <div class="card-body">
@@ -69,12 +71,77 @@
             </div>
         </div>            
     
-        {% endfor %}
+        {% endfor %} -->
     
 
-        <p></p>
-
-        
+        <p></p>     
         <button type="button" class="button button4" style="background-color: #543479; "><a href="{% url 'todolist:create_task' %}" class="text-white">Tambah Task Baru</a></button>
     </div>
-    {% endblock content %}
+
+
+        <!-- ajax script -->
+<!-- <script>
+    $(document).ready(function(){
+        $('.button').click(function(){
+            alert("halo");
+        })
+    })
+</script> -->
+
+<script>
+    $(document).ready(function(){
+        $.get("/todolist/json", function(data, status){
+            alert("Data: " + "\nStatus: " + status);
+        })
+    })
+</script>
+<!-- 
+        // <script>
+        //     $(document).ready(function () {
+        
+        //         // FETCHING DATA FROM JSON FILE
+        //         // $.getJSON( "{% url 'todolist:show_json' %}", function (data){
+        //         $.get( "/todolist/json/", function (data, status) {
+        //             alert("test");
+        //             console.log("test");
+        //             var task = '';
+        
+        //             // ITERATING THROUGH OBJECTS
+        //             $.each(data, function (key, value) {
+        
+        //                 //CONSTRUCTION OF ROWS HAVING
+        //                 // DATA FROM JSON OBJECT
+        //                 task += '<div class="card w-50 m-3" style="background-color: #2b2b2b; border-radius: 16px; height: fit-content;">';
+        
+        //                 task += '<div class="card-body">';
+        
+        //                 task += '<h5 class="card-title text-white">' + value.fields.title + '</h5>';
+        
+        //                 task += '<p class="text-white" style="font-size: 17px">' + value.fields.description + '</p>';
+        
+        //                 task += '<p class="text-white" style="font-size: 12px">' + value.fields.date + '</p>';
+                        
+        //                 if (value.fields.is_finished){
+        //                     task += '<p style="color: #7e5cdd; font-weight: bold;">Selesai</p>';
+        //                 } else {
+        //                     task += '<p style="color: #dd352f; font-weight: bold;" >Belum Selesai</p>';
+        //                 }
+        
+        //                 task += `<button type="button" class="button update-button" ><a href="change-status/${value.pk}" class="text-white">Update Task</a></button>`;
+        
+        //                 task += `<button type="button" class="button delete-button" ><a href="delete-task/${value.pk}" class="text-white">Delete Task</a></button>`;
+        
+        //                 task += '</div>';
+        
+        //                 task += '</div>';
+                       
+        //             });
+                      
+        //             //INSERTING ROWS INTO TABLE 
+        //             $('content').html(task);
+        //         });
+        //     });
+        // </script>
+         -->
+
+{% endblock content %}
