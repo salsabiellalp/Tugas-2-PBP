@@ -11,25 +11,42 @@ AJAX adalah sebuah singkatan dari Asynchronous Javascript and XML dan mengacu pa
 # Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 ## AJAX GET
 - Buatlah view baru yang mengembalikan seluruh data task dalam bentuk JSON.
+
   ![image](https://user-images.githubusercontent.com/112465346/195421476-d6d02634-ab4c-47e5-86bf-f82bb12e8b07.png)
 
 - Buatlah path /todolist/json yang mengarah ke view di urls.py
+
   ![image](https://user-images.githubusercontent.com/112465346/195421559-b00c357d-0508-4db5-83bf-144160fcff54.png)
 
 - Lakukan pengambilan task menggunakan AJAX GET.
+
   ![image](https://user-images.githubusercontent.com/112465346/195421752-baf71822-dabb-4f5e-8935-fc63772e333e.png)
  
 ## AJAX POST
 - Buatlah sebuah tombol Add Task yang membuka sebuah modal dengan form untuk menambahkan task.
+
+![image](https://user-images.githubusercontent.com/112465346/195490505-6a4c9e3d-74dd-4920-af04-1c97c62da89a.png)
+
+![image](https://user-images.githubusercontent.com/112465346/195490531-32cc4315-4f2b-4ef7-95a5-c97181927fa3.png)
+
   
 - Buatlah view baru untuk menambahkan task baru ke dalam database.
+
   ![image](https://user-images.githubusercontent.com/112465346/195422033-0978f3ff-336e-4e3d-aa57-aec1cb6213d1.png)
 
 - Buatlah path /todolist/add yang mengarah ke view yang baru kamu buat.
+
   ![image](https://user-images.githubusercontent.com/112465346/195422116-01788aa7-2af9-4afb-bf44-23b0c6ff9214.png)
 
 - Hubungkan form yang telah kamu buat di dalam modal kamu ke path /todolist/add
+
+![image](https://user-images.githubusercontent.com/112465346/195494341-9cbdef6d-334d-4324-a1a9-5720bb0cd5cb.png)
+
 - Tutup modal setelah penambahan task telah berhasil dilakukan.
+  menambahkan potongan kode berikut di fungsi javascript yang di triger oleh tombol addTask
+  
+  ![image](https://user-images.githubusercontent.com/112465346/195489887-719fd2f6-74f0-4216-bd04-eb2d75ba55f4.png)
+
 - Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page.
   fungsi display_todolist() adalah fungsi untuk merefresh halama todolist.html
   
