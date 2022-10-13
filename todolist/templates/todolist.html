@@ -36,13 +36,33 @@
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">{{username}}'s To-do List</span>
     <div class="rounded-4">
-      <button
-        type="button"
-        class="button button4"
-        style="background-color: #b3270f"
-      >
-        <a href="{% url 'todolist:logout_user' %}" class="text-white">Logout</a>
-      </button>
+      <div class="text-center">
+        <a
+          href=""
+          class="button btn btn-primary btn-rounded"
+          data-toggle="modal"
+          data-target="#orangeModalSubscription"
+          >Add Task</a
+        >
+        <button
+          type="button"
+          class="button button4 create_task"
+          style="background-color: #543479"
+        >
+          <a href="{% url 'todolist:create_task' %}" class="text-white"
+            >Create Task</a
+          >
+        </button>
+        <button
+          type="button"
+          class="button button4"
+          style="background-color: #b3270f"
+        >
+          <a href="{% url 'todolist:logout_user' %}" class="text-white"
+            >Logout</a
+          >
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -51,103 +71,73 @@
   Hi {{username}}, have a nice day!
 </p>
 
-'
 <div id="card" class="w-50" style="height: fit-content"></div>
 
-<div class="content m-5">
-  <p></p>
-  <button
-    type="button"
-    class="button button4 create_task"
-    style="background-color: #543479"
-  >
-    <a href="{% url 'todolist:create_task' %}" class="text-white"
-      >Tambah Task Baru</a
-    >
-  </button>
-</div>
-
-<form method="POST" action="">
-  {% csrf_token %}
-  <div
-    class="modal fade"
-    id="orangeModalSubscription"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="myModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-notify modal-warning" role="document">
-      <!--Content-->
-      <div class="modal-content">
-        <!--Header-->
-        <div
-          class="modal-header text-center"
-          style="background-color: rgb(111, 111, 197)"
+<div
+  class="modal fade"
+  id="orangeModalSubscription"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div
+        class="modal-header text-center"
+        style="background-color: rgb(111, 111, 197)"
+      >
+        <h4 class="modal-title white-text w-100 font-weight-bold py-2">
+          Subscribe
+        </h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
         >
-          <h4 class="modal-title white-text w-100 font-weight-bold py-2">
-            Subscribe
-          </h4>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        {% csrf_token %}
+        <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form3"
+            >Task</label
           >
-            <span aria-hidden="true" class="white-text">&times;</span>
-          </button>
+          <input type="text" class="form-control validate" id="task" />
         </div>
 
-        <!--Body-->
-        <div class="modal-body">
-          <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="form3"
-              >Task</label
-            >
-            <input type="text" class="form-control validate" id="task" />
-          </div>
-
-          <div class="md-form">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="form2"
-              >Description</label
-            >
-            <input type="email" id="desc" class="form-control validate" />
-          </div>
-        </div>
-
-        <!--Footer-->
-        <div class="modal-footer justify-content-center">
-          <a
-            type="button"
-            id="add-task"
-            class="btn btn-outline-primary waves-effect add"
-            >Add Task<i class="fas fa-paper-plane-o ml-1"></i
-          ></a>
+        <div class="md-form">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form2"
+            >Description</label
+          >
+          <input type="email" id="desc" class="form-control validate" />
         </div>
       </div>
-      <!--/.Content-->
-    </div>
-  </div>
 
-  <div class="text-center">
-    <a
-      href=""
-      class="btn btn-default btn-rounded"
-      data-toggle="modal"
-      data-target="#orangeModalSubscription"
-      >Add Task</a
-    >
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a
+          type="button"
+          id="add-task"
+          class="btn btn-outline-primary waves-effect add"
+          >Add Task<i class="fas fa-paper-plane-o ml-1"></i
+        ></a>
+      </div>
+    </div>
+    <!--/.Content-->
   </div>
-</form>
+</div>
 
 <!-- ajax script -->
 <script>
-  //   async function getTodolist() {
-  //     return fetch("{% url 'todolist:show_json' %}").then((res) => res.json());
-  //   }
-
   async function getTodolist() {
     return fetch("{% url 'todolist:show_json' %}").then((res) => res.json());
   }
@@ -176,85 +166,26 @@
     document.getElementById("card").innerHTML = htmlString;
   }
 
-  function addTask() {
+  async function addTask() {
     let task = $("#task").val();
     let deskripsi = $("#desc").val();
+    console.log(task);
     let csrf_token = $("input[name='csrfmiddlewaretoken']").val();
+
     fetch("{% url 'todolist:add_task_ajax' %}", {
       method: "POST",
       body: {
-        task: task,
-        deskripsi: deskripsi,
+        title: task,
+        description: deskripsi,
         csrfmiddlewaretoken: csrf_token,
       },
-    }).then(display_todolist);
+    })
+      .then(display_todolist)
+      .then($(".modal").modal("hide"));
     return false;
   }
-  //   function addTask() {
-  //     $(document).ready(function () {
-  //       $(".add").click(function () {
-  //         let task = $("#task").val();
-  //         let deskripsi = $("#desc").val();
-  //         let csrf_token = $("input[name='csrfmiddlewaretoken']").val();
-  //         $.post("/todolist/add/", {
-  //           task: task,
-  //           deskripsi: deskripsi,
-  //           csrfmiddlewaretoken: csrf_token,
-  //         });
-  //       });
-  //     });
-  //   }
   document.getElementById("add-task").onclick = addTask;
   display_todolist();
 </script>
-
-<!-- 
-        // <script>
-        //     $(document).ready(function () {
-        
-        //         // FETCHING DATA FROM JSON FILE
-        //         // $.getJSON( "{% url 'todolist:show_json' %}", function (data){
-        //         $.get( "/todolist/json/", function (data, status) {
-        //             alert("test");
-        //             console.log("test");
-        //             var task = '';
-        
-        //             // ITERATING THROUGH OBJECTS
-        //             $.each(data, function (key, value) {
-        
-        //                 //CONSTRUCTION OF ROWS HAVING
-        //                 // DATA FROM JSON OBJECT
-        //                 task += '<div class="card w-50 m-3" style="background-color: #2b2b2b; border-radius: 16px; height: fit-content;">';
-        
-        //                 task += '<div class="card-body">';
-        
-        //                 task += '<h5 class="card-title text-white">' + value.fields.title + '</h5>';
-        
-        //                 task += '<p class="text-white" style="font-size: 17px">' + value.fields.description + '</p>';
-        
-        //                 task += '<p class="text-white" style="font-size: 12px">' + value.fields.date + '</p>';
-                        
-        //                 if (value.fields.is_finished){
-        //                     task += '<p style="color: #7e5cdd; font-weight: bold;">Selesai</p>';
-        //                 } else {
-        //                     task += '<p style="color: #dd352f; font-weight: bold;" >Belum Selesai</p>';
-        //                 }
-        
-        //                 task += `<button type="button" class="button update-button" ><a href="change-status/${value.pk}" class="text-white">Update Task</a></button>`;
-        
-        //                 task += `<button type="button" class="button delete-button" ><a href="delete-task/${value.pk}" class="text-white">Delete Task</a></button>`;
-        
-        //                 task += '</div>';
-        
-        //                 task += '</div>';
-                       
-        //             });
-                      
-        //             //INSERTING ROWS INTO TABLE 
-        //             $('content').html(task);
-        //         });
-        //     });
-        // </script>
-         -->
 
 {% endblock content %}
