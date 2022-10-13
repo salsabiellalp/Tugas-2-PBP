@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from todolist.models import Task
 from django.core import serializers
 from django.shortcuts import render
@@ -75,3 +76,15 @@ def change_status(request, id):
 def show_json(request):
     data = Task.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@csrf_exempt
+def add_task_ajax(request):
+    if request.method == "POST":
+        print(request.POST)
+        judul = request.POST.get("title")
+        deskripsi = request.POST.get("description")
+        print(judul)
+        print(deskripsi)
+        add_todolist = Task(user=request.user, title=judul, description=deskripsi, date=datetime.now())
+        add_todolist.save()
+    return HttpResponse('')
